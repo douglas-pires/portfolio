@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+* {
+  font-family: 'Montserrat' !important;
+}
+
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+
+$alignments: left, center, right;
+
+@each $alignment in $alignments {
+  .text-#{$alignment} {
+    text-align: $alignment;
+  }
+}
+
+@mixin justify-align($argument) {
+  .justify-#{$argument} {
+    justify-content: $argument;
+  }
+  .align-#{$argument} {
+    align-items: $argument;
+  }
+}
+
+$justify-arguments: flex-start, flex-end, center, space-between, space-around,
+  initial, inherit;
+
+@each $arg in $justify-arguments {
+  @include justify-align($arg);
+}
+
+$--total-margin-items: 5;
+$--spacing-factor: 5;
+
+@for $i from 1 through $--total-margin-items {
+  .ma-#{$i} {
+    margin: #{($i * $--spacing-factor)}px;
+  }
+  .ml-#{$i} {
+    margin-left: #{($i * $--spacing-factor)}px;
+  }
+  .mr-#{$i} {
+    margin-right: #{($i * $--spacing-factor)}px;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{($i * $--spacing-factor)}px;
+  }
+  .mt-#{$i} {
+    margin-top: #{($i * $--spacing-factor)}px;
+  }
+  .pa-#{$i} {
+    margin: #{($i * $--spacing-factor)}px;
+  }
+  .pl-#{$i} {
+    margin-left: #{($i * $--spacing-factor)}px;
+  }
+  .pr-#{$i} {
+    margin-right: #{($i * $--spacing-factor)}px;
+  }
+  .pb-#{$i} {
+    margin-bottom: #{($i * $--spacing-factor)}px;
+  }
+  .pt-#{$i} {
+    margin-top: #{($i * $--spacing-factor)}px;
+  }
+}
