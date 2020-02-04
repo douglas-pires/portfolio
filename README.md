@@ -1,3 +1,10 @@
+# My Personal Portfolio
+
+This is my portfolio, built in React. A very simple way to show my coding skills. And also helping people who still
+learning how to develop.
+
+More info about the project as follows:
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
