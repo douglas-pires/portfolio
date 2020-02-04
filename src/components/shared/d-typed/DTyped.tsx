@@ -7,7 +7,6 @@ const typedText = (
   speed: number
 ) => {
   if (!textArr.length) textArr.push(text)
-
   return new Typed('#typed', {
     strings: textArr.filter(Boolean),
     typeSpeed: speed,
@@ -30,8 +29,7 @@ const DTyped = ({
   useEffect(() => {
     typedText(children, strings, speed)
   })
-
-  return <span id="typed"></span>
+  return <span id="typed" className="text-center line-height-2"></span>
 }
 
 export default DTyped
