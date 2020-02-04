@@ -4,11 +4,11 @@ import './HomeHeader.scss'
 
 const typedStrings = [
   'Hey there! 👋',
-  'My name is Douglas. Nice to meet you!',
-  'But you can call me Doug!',
+  'My name is <strong>Douglas</strong>. Nice to meet you.',
+  'But you can call me <strong>Doug</strong>!',
   'I am a Web Developer... 😃',
   'My specialty is JavaScript',
-  'Currently working as Front-end Developer at X-Team',
+  `And I'm currently as Front-end Developer at <strong>X-Team</strong> 🙌`,
   `Now I'm gonna repeat so you'll never forget! 👍`
 ]
 
