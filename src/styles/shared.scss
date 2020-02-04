@@ -14,7 +14,7 @@
   flex-direction: row;
 }
 
-$alignments: left, center, right;
+$alignments: left, center, right, justify;
 
 @each $alignment in $alignments {
   .text-#{$alignment} {
@@ -71,5 +71,13 @@ $--spacing-factor: 5;
   }
   .pt-#{$i} {
     margin-top: #{($i * $--spacing-factor)}px;
+  }
+}
+
+$--total-line-items: 5;
+$--line-height-factor: 5;
+@for $i from 1 through $--total-line-items {
+  .line-height-#{$i} {
+    line-height: #{$i}rem;
   }
 }
