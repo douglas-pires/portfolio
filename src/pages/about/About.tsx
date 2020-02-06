@@ -22,7 +22,7 @@ const About = () => (
         <p>My specialty is JavaScript.</p>
         <p>Currently learning Go.</p>
         <br />
-        <p>I like to play videogames or watch speedruns ocasionally.</p>
+        <p>I like to play videogames or watch speedruns occasionally.</p>
         <br />
         <p>
           I am also a great fan of music and I like to play my guitar whenever
