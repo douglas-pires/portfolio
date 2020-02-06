@@ -15,16 +15,18 @@ const About = () => (
         </p>
         <br />
         <p>
-          I'm in touch with new exciting web technlogies in a daily and I
+          I'm in touch with new exciting web technologies on a daily basis and I
           absolutely love what I do.
         </p>
         <br />
         <p>My specialty is JavaScript.</p>
+        <p>Currently learning Go.</p>
         <br />
         <p>I like to play videogames or watch speedruns ocasionally.</p>
         <br />
         <p>
-          I am also a great fan of music and I like to play whenever possible.
+          I am also a great fan of music and I like to play my guitar whenever
+          possible.
         </p>
         <hr className="mt-5 mb-5" />
         <p>
