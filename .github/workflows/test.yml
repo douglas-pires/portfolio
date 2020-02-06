@@ -35,4 +35,4 @@ jobs:
         with:
           node-version: 10.x
           registry-url: 'https://npm.pkg.github.com'
-      - run: npx eslint . --ext .js,.ts
+      - run: npx eslint . --ext .js,.tsx,.ts
