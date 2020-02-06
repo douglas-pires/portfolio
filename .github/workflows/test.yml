@@ -13,28 +13,28 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
-      run: |
-        npm ci
-        npm run build --if-present
-        npm test
-      env:
-        CI: true
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: yarn install, build, and test
+        run: |
+          yarn ci
+          yarn build --if-present
+          yarn test
+        env:
+          CI: true
   lint:
     if: github.event_name != 'pull_request'
     name: ESLint
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 10.x
-        registry-url: 'https://npm.pkg.github.com'
-    - run: npm ci
-    - run: npx eslint . --ext .js,.ts
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+          registry-url: 'https://npm.pkg.github.com'
+      - run: yarn ci
+      - run: npx eslint . --ext .js,.ts
