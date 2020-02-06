@@ -8,7 +8,7 @@ const typedStrings = [
   'But you can call me <strong>Doug</strong>!',
   'I am a Web Developer... 😃',
   'My specialty is JavaScript',
-  `And I'm currently as Front-end Developer at <strong>X-Team</strong> 🙌`,
+  `And I'm currently working as Front-end Developer at <strong>X-Team</strong> 🙌`,
   `Now I'm gonna repeat so you'll never forget! 👍`
 ]
 
