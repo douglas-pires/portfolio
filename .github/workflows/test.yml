@@ -21,18 +21,7 @@ jobs:
       - name: yarn install, and test
         run: |
           yarn install
+          yarn lint . --ext .js,.tsx,.ts
           yarn test
         env:
           CI: true
-  lint:
-    if: github.event_name != 'pull_request'
-    name: ESLint
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
-          registry-url: 'https://npm.pkg.github.com'
-      - run: yarn lint . --ext .js,.tsx,.ts
