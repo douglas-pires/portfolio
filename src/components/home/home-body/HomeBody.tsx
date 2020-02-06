@@ -1,18 +1,18 @@
 import React from 'react'
 
-const skills = [
+export const skills = [
   ['JavaScript', 'VueJS', 'React', 'TypeScript'],
   ['NodeJS', 'GraphQL', 'MongoDB', 'SASS']
 ]
 
-const contacts = [
+export const contacts = [
   { href: 'mailto:douglas.pires@live.com', text: 'E-mail' },
   { href: 'https://github.com/douglas-pires', text: 'Github' },
   { href: 'https://www.linkedin.com/in/dpiresvilela/', text: 'LinkedIn' }
 ]
 
 const renderSkills = (skills: string[], index: number) => (
-  <ol key={index}>
+  <ol key={index} className="home-body__skills">
     {skills.map(skill => (
       <li className="pa-3" key={skill}>
         {skill}
@@ -22,7 +22,7 @@ const renderSkills = (skills: string[], index: number) => (
 )
 
 const renderContacts = (contact: { href: string; text: string }) => (
-  <li key={contact.text} className="pa-3 text-center">
+  <li key={contact.text} className="pa-3 text-center home-body__contacts">
     <a href={contact.href} target="_blank" rel="noopener noreferrer">
       {contact.text}
     </a>

@@ -3,9 +3,9 @@ import { Router, Route } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import DNavbar from './components/shared/d-navbar/DNavbar'
 
-const Home = lazy(() => import('./pages/Home'))
+const Home = lazy(() => import('./pages/home/Home'))
 const About = lazy(() => import('./pages/about/About'))
-const Projects = lazy(() => import('./pages/Projects'))
+const Projects = lazy(() => import('./pages/projects/Projects'))
 
 const App = () => (
   <div className="App">

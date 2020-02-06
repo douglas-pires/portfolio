@@ -1,5 +1,5 @@
 import React from 'react'
-import DPortrait from '../components/shared/d-portrait/DPortrait'
+import DPortrait from '../../components/shared/d-portrait/DPortrait'
 
 const portraits = [
   {
