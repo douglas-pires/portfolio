@@ -6,7 +6,7 @@ const DPortrait = ({ src, title }: { src: string; title: string }) => (
     <div className="d-portrait__overlay d-flex justify-center align-center text-center">
       <p>{title}</p>
     </div>
-    <img src={src} />
+    <img src={src} alt="Project" />
   </div>
 )
 

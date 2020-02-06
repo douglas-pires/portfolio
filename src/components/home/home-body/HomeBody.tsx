@@ -23,7 +23,7 @@ const renderSkills = (skills: string[], index: number) => (
 
 const renderContacts = (contact: { href: string; text: string }) => (
   <li key={contact.text} className="pa-3 text-center">
-    <a href={contact.href} target="_blank">
+    <a href={contact.href} target="_blank" rel="noopener noreferrer">
       {contact.text}
     </a>
   </li>

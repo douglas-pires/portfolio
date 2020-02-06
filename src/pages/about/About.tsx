@@ -6,7 +6,7 @@ const About = () => (
   <div className="d-flex justify-center pa-5 about">
     <div>
       <div className="d-flex justify-center">
-        <img src={me} alt="" className="about__me-image d-flex" />
+        <img src={me} alt="Douglas Pires" className="about__me-image d-flex" />
       </div>
       <h1 className="text-center ma-5">Me!</h1>
       <div className="about__presentation text-justify">
