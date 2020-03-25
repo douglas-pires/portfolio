@@ -1,0 +1,12 @@
+.d-input {
+  &__wrapper {
+    padding: 10px;
+  }
+  &__input {
+    display: flex;
+    flex: 1 auto;
+    padding: 10px;
+    border: 1px solid #cecece;
+    border-radius: 5px;
+  }
+}

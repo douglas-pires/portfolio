@@ -1,0 +1,14 @@
+@import '../../../styles/shared.scss';
+
+.d-button {
+  &__wrapper {
+    flex: 1 auto;
+  }
+  &__button {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

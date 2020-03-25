@@ -4,6 +4,94 @@
   font-family: 'Montserrat' !important;
 }
 
+$themeTypes: (
+  primary: 'primary',
+  warning: 'warning',
+  danger: 'danger',
+  info: 'info',
+  success: 'success'
+);
+
+$themes: (
+  light: (
+    backgroundColor: #fff,
+    textColor: #1e272e,
+    default: #cecece,
+    default-textColor: #1e272e,
+    primary: #575fcf,
+    primary-textColor: #fff,
+    warning: #ffc048,
+    warning-textColor: #fff,
+    danger: #ff3f34,
+    danger-textColor: #fff,
+    info: #0fbcf9,
+    info-textColor: #fff,
+    success: #05c46b,
+    success-textColor: #fff
+  ),
+  dark: (
+    backgroundColor: #1e272e,
+    default: #cecece,
+    default-textColor: #1e272e,
+    primary: #575fcf,
+    primary-textColor: #fff,
+    warning: #ffc048,
+    warning-textColor: #fff,
+    danger: #ff3f34,
+    danger-textColor: #fff,
+    info: #0fbcf9,
+    info-textColor: #fff,
+    success: #05c46b,
+    success-textColor: #fff
+  )
+);
+
+@mixin add-theme-types($theme, $themeTypes) {
+  @each $themeType, $map in $themeTypes {
+    .#{$themeType} {
+      background-color: map-get($map: $theme, $key: $themeType) !important;
+      color: map-get(
+        $map: $theme,
+        $key: #{$themeType + '-textColor'}
+      ) !important;
+    }
+    .#{$themeType}--text {
+      color: map-get($map: $theme, $key: $themeType) !important;
+    }
+  }
+}
+
+@mixin themify($themes) {
+  @each $themeName, $theme in $themes {
+    .theme-#{$themeName} & {
+      $theme-map: () !global;
+      @each $key in $theme {
+        $value: map-get(map-get($themes, $themeName), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+      @include add-theme-types($theme, $themeTypes);
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+.app-container {
+  @include themify($themes) {
+    color: themed('textColor');
+    background-color: themed('backgroundColor');
+  }
+}
+
 .d-flex {
   display: flex;
 }
@@ -58,19 +146,19 @@ $--spacing-factor: 5;
     margin-top: #{($i * $--spacing-factor)}px;
   }
   .pa-#{$i} {
-    margin: #{($i * $--spacing-factor)}px;
+    padding: #{($i * $--spacing-factor)}px;
   }
   .pl-#{$i} {
-    margin-left: #{($i * $--spacing-factor)}px;
+    padding-left: #{($i * $--spacing-factor)}px;
   }
   .pr-#{$i} {
-    margin-right: #{($i * $--spacing-factor)}px;
+    padding-right: #{($i * $--spacing-factor)}px;
   }
   .pb-#{$i} {
-    margin-bottom: #{($i * $--spacing-factor)}px;
+    padding-bottom: #{($i * $--spacing-factor)}px;
   }
   .pt-#{$i} {
-    margin-top: #{($i * $--spacing-factor)}px;
+    padding-top: #{($i * $--spacing-factor)}px;
   }
 }
 
@@ -80,4 +168,14 @@ $--line-height-factor: 5;
   .line-height-#{$i} {
     line-height: #{$i}rem;
   }
+}
+
+$i: 0;
+@while $i <= 100 {
+  @if $i != 0 {
+    .min-height-#{$i} {
+      min-height: #{$i}vh;
+    }
+  }
+  $i: $i + 20;
 }
