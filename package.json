@@ -45,6 +45,6 @@
   },
   "devDependencies": {
     "@types/react": "^16.9.25",
-    "@types/react-dom": "^16.9.5"
+    "@types/react-dom": "^16.9.6"
   }
 }
