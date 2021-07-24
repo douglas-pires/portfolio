@@ -1,0 +1,104 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "plugins": ["@typescript-eslint/eslint-plugin"],
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ],
+    "@typescript-eslint/camelcase": 0,
+    "@typescript-eslint/explicit-function-return-type": 1,
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "selector": "property",
+        "format": ["camelCase", "UPPER_CASE", "PascalCase", "snake_case"]
+      },
+      {
+        "selector": "property",
+        "format": null,
+        "filter": {
+          "regex": "^(_resource|_operation|Q1_price|Q2_duration_minutes|Q2_num_results|__esModule|__typename|__html)$",
+          "match": true
+        }
+      }
+    ],
+    "@typescript-eslint/no-empty-function": 2,
+    "@typescript-eslint/no-explicit-any": 2,
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "directive",
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": "directive",
+        "next": "directive"
+      },
+      {
+        "blankLine": "always",
+        "prev": "import",
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": "import",
+        "next": "import"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": ["const", "let", "var", "export"]
+      },
+      {
+        "blankLine": "always",
+        "prev": ["const", "let", "var", "export"],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": ["const", "let", "var", "export"],
+        "next": ["const", "let", "var", "export"]
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": ["if", "class", "for", "do", "while", "switch", "try"]
+      },
+      {
+        "blankLine": "always",
+        "prev": ["if", "class", "for", "do", "while", "switch", "try"],
+        "next": "*"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      }
+    ],
+    "@typescript-eslint/lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterOverload": true,
+        "exceptAfterSingleLine": true
+      }
+    ],
+    "no-useless-escape": "warn"
+  }
+}
