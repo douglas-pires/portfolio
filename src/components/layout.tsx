@@ -75,13 +75,7 @@ class Layout extends React.Component<LayoutProps> {
           style={{
             marginTop: 70,
           }}
-        >
-          © {new Date().getFullYear()}, Forked from
-          {` `}
-          <a href="https://github.com/gatsbyjs/gatsby-starter-blog">
-            Gatsby Starter Blog
-          </a>
-        </footer>
+        ></footer>
       </div>
     );
   }

@@ -10,15 +10,39 @@ module.exports = {
     },
     projects: [
       {
-        title: `Currently working at Busbud!`,
-        description: `Busbud is a website and an app that provides travelers instant access to the most extensive global network of city-to-city buses using our bus-booking platform.`,
-        url: `https://www.busbud.com/`,
-        moreLinks: [
-          {
-            type: ``,
-            url: ``,
-          },
-        ],
+        en: {
+          title: `Currently working at Busbud!`,
+          description: `Busbud is a website and an app that provides travelers instant access to the most extensive global network of city-to-city buses using their bus-booking platform.`,
+          url: `https://www.busbud.com/`,
+          moreLinks: [
+            {
+              type: ``,
+              url: ``,
+            },
+          ],
+        },
+        br: {
+          title: `Atualmente trabalhando na Busbud!`,
+          description: `A Busbud é um site e aplicativo que fornece aos viajantes acesso instantâneo ao mais extenso catálogo de origem-destino que se pode oferecer.`,
+          url: `https://www.busbud.com/`,
+          moreLinks: [
+            {
+              type: ``,
+              url: ``,
+            },
+          ],
+        },
+        fr: {
+          title: `Currently working at Busbud!`,
+          description: `Comparez et réservez votre prochain trajet en un clin d'œil avec Busbud.`,
+          url: `https://www.busbud.com/`,
+          moreLinks: [
+            {
+              type: ``,
+              url: ``,
+            },
+          ],
+        },
       },
     ],
   },

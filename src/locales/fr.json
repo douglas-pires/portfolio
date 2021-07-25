@@ -1,5 +1,7 @@
 {
   "page_title": "Blog & Portfolio",
-  "presentation": "Hi, I am {name}, a developer, currently living in São Paulo, in the process of moving to Montréal.",
-  "follow_me": "You should follow me on Twitter!"
+  "presentation": "Salut, Je m'apelle {name}, développeur, actuellement à São Paulo, déménageant à Montréal.",
+  "follow_me": "Suis moi sur Twitter!",
+  "recent_projects": "Les projets récents",
+  "recent_posts": "Les derniers posts"
 }

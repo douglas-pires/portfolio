@@ -6,7 +6,7 @@ import { rhythm, scale } from '../utils/typography';
 import useTranslation from '@/hooks/useTranslation';
 
 function Posts(): JSX.Element {
-  const { locale } = useTranslation();
+  const { t, locale } = useTranslation();
   const data = useStaticQuery(graphql`
     query PostsQuery {
       allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -43,7 +43,7 @@ function Posts(): JSX.Element {
             textTransform: 'uppercase',
           }}
         >
-          Recent Posts
+          {t('recent_posts')}
         </h3>
       </div>
       <div>

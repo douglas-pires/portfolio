@@ -2,19 +2,42 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { rhythm, scale } from '../utils/typography';
+import useTranslation from '@/hooks/useTranslation';
 
 function Projects(): JSX.Element {
+  const { t, locale } = useTranslation();
+
   const data = useStaticQuery(graphql`
     query ProjectsQuery {
       site {
         siteMetadata {
           projects {
-            title
-            url
-            description
-            moreLinks {
-              type
+            en {
+              title
               url
+              description
+              moreLinks {
+                type
+                url
+              }
+            }
+            br {
+              title
+              url
+              description
+              moreLinks {
+                type
+                url
+              }
+            }
+            fr {
+              title
+              url
+              description
+              moreLinks {
+                type
+                url
+              }
             }
           }
         }
@@ -37,12 +60,16 @@ function Projects(): JSX.Element {
             textTransform: 'uppercase',
           }}
         >
-          Recent Projects
+          {t('recent_projects')}
         </h3>
       </div>
       <div>
         {projects.map(project => {
-          const { title, description, url, moreLinks } = project;
+          const _locale = locale.includes('BR') ? 'br' : locale;
+
+          const {
+            [_locale]: { title, description, url, moreLinks },
+          } = project;
 
           return (
             <div key={title}>

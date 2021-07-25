@@ -35,8 +35,6 @@ exports.createPages = async ({ graphql, actions, ...rest }) => {
   // Create blog posts pages.
   const posts = result.data.allMarkdownRemark.edges;
 
-  console.log(JSON.stringify(posts, null, 2));
-
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node;
     const next = index === 0 ? null : posts[index - 1].node;
@@ -58,8 +56,6 @@ exports.onCreateNode = ({ node, actions, getNode, ...rest }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = `/${slugify(node.frontmatter.title, { lower: true })}`;
-
-    console.log(value);
 
     createNodeField({
       name: `slug`,
