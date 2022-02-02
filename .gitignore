@@ -112,3 +112,7 @@ exports
 *.cache
 build
 .strapi-updater.json
+
+frontent/out/*
+frontent/.next/*
+frontent/dist/*
